@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).on("blur focus", function(e)
+    {
+      var prevType = $(this).data("prevType");
+
+      if (prevType != e.type)
+      { //  reduce double fire issues
+        switch (e.type)
+        {
+          case "blur":
+            $('div').text("Unfocused");
+            break;
+          case "focus":
+            $('div').text("Focused");
+            break;
+        }
+      }
+
+      $(this).data("prevType", e.type);
+    })
+  </script>
+</head>
+
+<div></div>
+
+</html>
