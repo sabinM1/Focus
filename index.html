@@ -2,8 +2,18 @@
 <html>
 
 <head>
+  <!--  UTF-8 encoding -->
   <meta charset="utf-8" />
+  <!-- title -->
+  <title>Focus</title>
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicons/site.webmanifest">
+  <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- focused/unfocused script -->
   <script>
     $(window).on("blur focus", function(e)
     {
@@ -14,10 +24,10 @@
         switch (e.type)
         {
           case "blur":
-            $('div').text("Unfocused");
+            $('div').text("Unfocused"); //browser's tab is considered inactive
             break;
           case "focus":
-            $('div').text("Focused");
+            $('div').text("Focused"); // browser's tab is considered acrive
             break;
         }
       }
